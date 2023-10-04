@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>{zzz:sitetitle}</title>
+	<meta name="Keywords" content="{zzz:sitekeys}" >
+	<meta name="Description" content="{zzz:sitedesc}">
+	<meta name="author" content="https://iee.zjgsu.edu.cn" />
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/materialdesignicons.min.css">	
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/reset.css??v={zzz:time}">
+	<script type="text/javascript" src="{zzz:tempath}js/jquery.min.js"></script>
+	<script type="text/javascript" src="{zzz:tempath}js/wow.min.js"></script>
+  <style>
+    .news-tit{padding: 50px;font-size: 30px;}
+    .newsbox{position: relative;height: 100%;width: 1200px;margin:0 auto;}
+    .list-item{background: #fff;padding: 10px;box-shadow: 2px 2px 5px #ddd;}
+    .list-item .img{overflow: hidden;}
+    .m-t-10{padding-top:10px;}
+    .text-title{font-size: 18px;}
+    .news-more{margin-top:100px;}
+    .news-more a{background: #7d2881;padding: 15px 80px;border-radius: 25px;color: #fff;}
+    .news-more a:hover{background: #9c39a1;padding: 15px 80px;border-radius: 25px;color: #fff;}
+  </style>
+</head>
+<body>
+{zzz:head}
+<div class="banner">
+  <div class="w-1200">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators hide">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+                  
+                  <div class="carousel-inner">
+                  	{zzz:slidelist type=A num=5}
+                    <div class="item {if:[slidelist:i]=1} active{end if}">{if:"[slidelist:link]"=""}<img src="[slidelist:pic]" alt="[slidelist:title]">{else}<a href="[slidelist:link]"><img src="[slidelist:pic]" alt="[slidelist:title]"></a>{end if}</div>
+                    {/zzz:slidelist}
+                  </div>
+                  <a class="left carousel-control" href="#carouselExampleIndicators" role="button" data-slide="prev"><span class="icon-left-open-big icon-prev" aria-hidden="true"></span><span class="sr-only">Previous</span></a>
+                  <a class="right carousel-control" href="#carouselExampleIndicators" role="button" data-slide="next"><span class="icon-right-open-big icon-next" aria-hidden="true"></span><span class="sr-only">Next</span></a>
+    </div>
+    </div>
+</div>
+
+<div class="news-tit text-center">
+  NEWS
+</div>
+<div class="newsbox">
+      <div class="row">
+        {zzz:content size=6 sid=31 asc=desc}
+        <div class="col-md-4 wow fadeInUp" data-wow-delay=".[list:i]s">
+          <div class="list-item text-center">
+                <div class="img">
+                    <a class="scaleimg" href="[content:link]" class="text-title" target="_blank">                    
+                          <img src="[content:pic]">                    
+                    </a>
+                </div>
+                <div class="text-left m-t-10">
+                      <a href="[content:link]" class="text-title" target="_blank">[content:title]</a>
+                      <p class="actime m-t-10">[content:date]</p>
+                </div> 
+          </div>
+        </div>
+        {/zzz:content} 
+      </div>
+
+      <div class="news-more text-center wow fadeInUp" data-wow-delay=".5s"><a href="">VIEW MORE</a></div>
+
+</div>
+
+{zzz:foot}
+</body>
+</html>

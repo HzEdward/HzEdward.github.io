@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>{zzz:sitetitle}</title>
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/materialdesignicons.min.css">	
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/reset.css">
+	<script src="{zzz:sitepath}plugins/layer/layer.min.js"></script> 
+	<script src="{zzz:tempath}/js/adminjs.js"></script>
+<style type="text/css">
+body{background:#fff;}
+#container{background:#fff;padding: 20px 0;}
+.col-main{background-color: #fff;padding: 0px 50px;box-shadow: 2px 5px 5px #ddd;min-height: 650px;}
+.col-more-2 {
+    width:100%;
+    height:100px;
+    margin:15px 0;
+    box-sizing:border-box;
+    padding:0px 35px;
+    background:url({zzz:tempath}images/icon02.png) 0% 5px no-repeat;
+    text-align: left;
+    transition:all ease .3s;
+}
+.col-more-2 a{color: #7f0000}
+.cur-box{
+	margin-top:150px;
+	color: #fff;	
+}
+.cur-box h3{
+	color: #fff;
+	font-size: 3.5vw;
+	opacity: .6;	
+}
+.cur-box a{padding: 10px 30px;color: #fff;font-size: 1.2vw;opacity: .6;}
+.cur-box a:hover{padding: 10px 30px;color: #fff;font-size: 1.2vw;opacity: 1; }
+.col-cur{line-height: 50px;border-bottom: 1px solid #ddd;margin-bottom: 15px;font-size: 14px;}
+
+/*--listbox css--*/
+.list-item3{margin-bottom:3rem;transition:.6s;max-height: 250px;overflow: hidden;}
+.list-item3 .info:hover{box-shadow:0 1rem 1rem rgba(0,0,0,0.1)}
+.list-item3 .info:hover .title{color:#7f0000}
+.list-item3 .info{padding: 50px;background:#f5f5f5;}
+.list-item3 .title{font-size:30px;padding:.3em;display:block;color:#333;overflow:hidden;white-space:nowrap;-o-text-overflow:ellipsis;text-overflow:ellipsis}
+.list-item3 .actime{color:#999;border-radius:2em;border:1px solid #aaa;padding:0 30px 0 30px;font-size:18px;line-height:35px;display:inline-block;margin-top:1em;}
+.list-item3 .desc{color:#999;font-size:16px;line-height:26px;height:52px;word-break:break-all;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;-webkit-line-clamp:2;margin-top:10px}
+
+
+
+.col-info{margin-top: 50px;}
+.col-info h3{font-size: 24px;}
+.col-info dt span{font-size: 0.8vw;color: #999;font-weight: normal;}
+.col-info dd{color: #333;padding: 30px 50px;line-height: 30px;font-size: 16px;}
+.col-info dd p{padding-bottom: 10px;font-size: 16px;}
+@media (max-width:768px){
+	.list-item3 .info{padding:.4rem .24rem .6rem}
+	.list-item3 .info .desc{height:auto;max-height:78px;-webkit-line-clamp:3}
+	.list-item3 .actime{font-size:16px;padding:0 .3rem 0 .6rem;background-size:.24rem;font-size:14px;line-height:32px}
+	.list-item3 .title{overflow:hidden;white-space:nowrap;-o-text-overflow:ellipsis;text-overflow:ellipsis}
+
+	#container{background:#f5f5f5;padding: 0px 0;}
+	.col-main{background-color: #fff;padding: 10px 10px;box-shadow: 2px 5px 5px #ddd;min-height: 400px;}
+	.col-info{margin-top: 20px;}
+.col-info h3{font-size: 18px;line-height: 1.8rem}
+.col-info dt span{font-size: 12px;color: #999;font-weight: normal;}
+.col-info dd{color: #333;padding: 10px;line-height: 30px;font-size: 16px;}
+.col-info dd p{padding-bottom: 10px;font-size: 16px;}
+}
+</style>
+</head>
+<body>
+<section id="container">
+	<div class="w-1200 col-main">
+		<div class="col-info">
+			<dl>
+				<dt class="text-center"><h3>[news:title]</h3><p><span>发布日期：[news:date]</span> </p></dt>
+				<dd>
+				<!-- {if:[news:ispic]=1}<div style="text-align: center;margin-bottom:50px;"><img src="[news:pic]" style="width:300px;"></div>{end if} -->
+				[news:content]
+                [news:down]
+				</dd>
+			</dl>
+        </div>
+        
+	</div>
+</section>
+
+</body>
+</html>

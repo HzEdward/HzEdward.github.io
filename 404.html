@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>404 error</title>
+<meta name="keywords" content="" />
+<meta name="description" content="404 error" />
+<style type="text/css">
+body{ color:#444; font-size:12px; background:#f5f5f5;font-family:"微软雅黑",Arial, Helvetica, sans-serif;}
+a img{ border:0px;}a,a:visited{ color:#333; text-decoration:none;}a:hover{ color:#000; text-decoration:none;}
+.mbody{ margin:10px auto; width:1200px; height:330px;background:#fff; border:1px solid #d6d6d6; border-radius:5px;}
+.mainboxer{ width:460px;height: 330px; padding:60px 20px;margin:0 auto;text-align:center;}
+.toplink{ text-align:center;}
+.toplink a,.toplink a:visited{ color:#888; text-decoration:none;}
+.toplink a:hover{ text-decoration:underline;}
+.eline1{ color:#666; border-bottom:1px dotted #eee; height:56px; font-size:35px; }
+.eline1 .e404{ color:#4b74b6; font-size:37px; }
+.eline2{ font-size:20px;padding:8px 0px 0px 0px;}
+.eline2 a{color:#4b74b6}
+.eline3{ font-size:14px;padding:5px 0px 0px 0px; color:#666}
+.eline_en{ font-size:12px; margin:10px 0px 10px 0px;color:#ccc;font-family:Helvetica}
+
+.btnline{ padding:22px 0px 0px 0px;}
+.btnline a{ background:#f08628; display:inline-block; height:20px; line-height:20px; font-size:14px; margin:0px 2px; padding:4px 20px;font-family:Helvetica}
+.btnline a,.btnline a:visited{ color:#fff; text-decoration:none;}
+.btnline a:hover{ color:#fff; background:#e37e25; text-decoration:none;}
+.btnline a span{ font-size:10px; font-weight:bold; margin-left:3px;}
+.poweredby{ color:#666; font-size:10px; text-align:center; padding:10px; width:1000px; margin:0 auto;text-align: right;}
+.poweredby a,.poweredby a:visited{ color:#666; text-decoration:none;}
+.poweredby a:hover{ text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<div class="mbody" id="mbody">
+    <div class="mainboxer">
+	<img src="/images/404.jpg">
+        <div class="eline_en">Sorry, there is an error in the page you are visiting!</div>
+        <div class="btnline"><a href="javascript:history.go(-1);" title="goback" target="_self">返回<span>GOBACK</span></a><a href="/" title="Home" target="_self">网站首页<span>HOME</span></a></div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+var webScreenHeight=function(){return document.documentElement.clientHeight;}
+var bodyheight  = 0;
+var mbodyhegith = 460;
+resetting();
+window.onresize= function(){resetting()};
+function resetting(){
+	bodyheight = webScreenHeight();
+	if(bodyheight<mbodyhegith){
+		document.getElementById("mbody").style.marginTop = "10px";
+	}else{
+		document.getElementById("mbody").style.marginTop = (bodyheight-mbodyhegith)/2+"px";
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+2023-10-02 23:09:57	127.0.0.1	/_admin999/login.php?act=loginon	1
+UPDATE zzz_user SET `lastlogintime`='2023/10/02 23:09:57',`lastloginip`='127.0.0.1',`adminrand`='10729cb6696fad5de8547988535d164d',`logincount`=79  WHERE uid=1	

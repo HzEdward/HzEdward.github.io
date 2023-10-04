@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>{zzz:sitetitle}</title>
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/materialdesignicons.min.css">	
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/reset.css">
+	<script type="text/javascript" src="{zzz:tempath}js/jquery.min.js?v=1.0" ></script>
+	<script type="text/javascript" src="{zzz:tempath}js/wow.min.js"></script>
+<style type="text/css">
+.col-body{padding: 50px;}
+.col-content{border-top:1px solid #ddd;}
+.list-item{background: #fff;padding: 10px;box-shadow: 2px 2px 5px #ddd;}
+.list-item .img{overflow: hidden;}
+.m-t-10{padding-top:10px;}
+.text-title{font-size: 18px;}
+</style>
+</head>
+<body>
+{zzz:top}
+<section >
+	<div class="w-1200">
+		<div class="col-body">
+			<div class="menu-title"><h2 class="title">{zzz:sname}</h2><p></p></div>
+			<div class="col-content">
+				<ul class="list-box" style="margin-top:30px">
+					{zzz:list size=9 sid={zzz:sid} asc=desc}
+		            <li  class="col-md-4 wow fadeInUp" data-wow-delay=".[list:i]s">
+		            	<div class="list-item text-center">
+		            			<div class="img">
+				            		<a class="scaleimg" href="[list:link]" class="text-title" target="_blank">                   	
+				                        <img src="[list:pic]">                    
+				                    </a>
+			                  	</div>
+			                    <div class="text-left m-t-10">
+			                        <a href="[list:link]" class="text-title" target="_blank">[list:title]</a>
+			                        <!-- <p class="desc show">[list:desc]</p> -->
+			                        <p class="actime m-t-10">[list:date]</p>
+			                    </div> 
+		                    </div> 
+		            </li>
+					{/zzz:list} 
+		            <div class="list-page m-tb-50">{list:page len=10 style=1} </div>
+		                       
+		        </ul>	
+			</div>
+		</div>
+
+	</div>
+</section>
+{zzz:foot}
+</body>
+</html>

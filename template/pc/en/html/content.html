@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>[news:title]【{zzz:sitetitle}】</title>
+	<meta name="Keywords" content="[news:title]" >
+	<meta name="Description" content="[news:desc]">
+	<meta name="author" content="https://www.zjhwtc.com" />
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/materialdesignicons.min.css">	
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/reset.css?v=20221108">
+	<script type="text/javascript" src="{zzz:tempath}js/jquery.min.js"></script>
+	<script type="text/javascript" src="{zzz:tempath}js/wow.min.js"></script>
+<meta name="referrer" content="never">
+<meta data-draft-node="block" data-draft-type="table" data-size="normal" data-row-style="normal">
+<style type="text/css">
+.titlebg{width:100%;background: #f2faff url({zzz:tempath}images/titlebg2.jpg) center center;height:200px;margin-top:140px;border-bottom:1px solid #dde9f0;}
+.col-tit{background: url({zzz:tempath}images/titleline.jpg) no-repeat left center;padding-left:50px;}
+.col-tit h3{font-weight: bold;font-size: 30px;padding-top:10px;}
+.col-tit p{line-height: 40px;}
+#container{padding: 20px 0 0px 0;margin-top:5px;}
+.col-mainbox{background:#fff;padding: 50px;min-height: 650px;margin-top:20px;}
+.cur-box a{padding: 10px 30px;color: #fff;font-size: 1.2vw;opacity: .6;}
+.cur-box a:hover{padding: 10px 30px;color: #fff;font-size: 1.2vw;opacity: 1; }
+.col-cur{line-height: 50px;margin: 15px;font-size: 14px;}
+
+.col-info{color: #333;padding: 50px;line-height: 30px;font-size: 18px;}
+.col-info p{padding-bottom: 10px;}
+.col-info img{width:100%;}
+</style>
+</head>
+<body>
+{zzz:top}
+<section id="container">
+	<div class="w-1200 col-mainbox">
+		<div class="col-tit"><h3>[news:title]</h3><p>{if:"[news:zauthor]"<>''}<span>作者：[news:zauthor]</span>　{end if}{if:"[news:zsource]"<>''}<span>来源：[news:zsource]</span>　{end if}<span>[news:date]</span></p></div>
+		<div class="col-info">
+			[news:content]
+            [news:down]
+        </div>
+        
+	</div>
+</section>
+
+{zzz:foot}
+<script type="text/javascript" src="{zzz:tempath}js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{zzz:tempath}js/perfect-scrollbar.min.js"></script>
+<script>
+new WOW().init();
+</script>
+</body>
+</html>

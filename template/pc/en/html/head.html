@@ -1,0 +1,41 @@
+﻿<header class="header">
+  <div class="head-box">
+    <div class="top-box" >
+      <img src="{zzz:tempath}/images/logo.png">
+      <h1>Prof. Research Team</h1>
+    </div>
+
+    <div class="menu-box show">
+    <div class="w-1200">
+      <div class="nav">
+        <ul >
+
+      <li class="nLi {if:{zzz:tsid}=0}active{end if}"><h3><a href="{zzz:sitepath}">Home</a></h3></li> 
+        {zzz:navlist postion=menu num=9}
+      <li class="nLi {if:[navlist:sid]={zzz:tsid}}active{end if}">
+                
+        <h3><a href="[navlist:link]" class="clearfix">[navlist:name] </a></h3><!-- {if:[navlist:num]>0}</a></h3>
+    
+        <div class="navSub">
+            <ul class="clearfix">
+                        {zzz:navlist1 sid=[navlist:sid]} 
+                                <li><a href="[navlist1:link]" class="tra300"><i class="mdi mdi-chevron-right"></i> [navlist1:name]</a></li>
+                        {/zzz:navlist1}                                     
+            </ul>
+          </div>
+      {else}
+            </a></h3>
+            {end if} -->
+        </li>
+ {/zzz:navlist} 
+        <li class="nLi"></li>       
+  </ul>
+      </div>
+
+      
+
+    </div>
+    </div>
+  </div>
+
+</header>

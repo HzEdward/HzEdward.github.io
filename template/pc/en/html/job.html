@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>{zzz:tsname}-{zzz:sitetitle}</title>
+	<meta name="Keywords" content="{zzz:sitekeys}" >
+	<meta name="Description" content="{zzz:sitedesc}">
+	<meta name="author" content="" />
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/materialdesignicons.min.css">	
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/reset.css?v=20221123">
+	<script type="text/javascript" src="{zzz:tempath}js/jquery.min.js?v=1.0" ></script>
+	<script type="text/javascript" src="{zzz:tempath}js/wow.min.js"></script>
+	<script src="{zzz:sitepath}plugins/layer/layer.min.js"></script> 
+	<script src="{zzz:tempath}/js/adminjs.js"></script>
+<style type="text/css">
+.main{position:relative;margin:50px auto;width:1200px;overflow:hidden;}
+.siderBar{float:left;width:250px;}
+.siderBar li{margin-bottom:1px;padding:5px 20px;line-height:50px;font-size:16px;background:#f0f0f0;cursor:pointer;transition:all .5s;}
+.siderBar li.cur{color:#fff;background:#000;}
+.content{float:right;width:920px;min-height: 500px}
+.content .item{color:#333;overflow:hidden;}
+.itembox{margin-bottom:50px;}
+.content .title{padding:15px;font-size: 180%}
+.item-pic img{width:100%;}
+.item-con{font-size: 16px;}
+.m-tb{margin:20px 0;}
+</style>
+</head>
+<body>
+{zzz:top}
+<main class="main">
+	<div class="siderBar">
+		<div class="menu">
+			<ul>
+				{zzz:navlist sid={zzz:tsid}}
+				<li data-href="#s[navlist:i]">[navlist:name]</li>
+				{/zzz:navlist}
+			</ul>
+		</div>
+	</div>
+	<div class="content">
+		{zzz:navlist sid={zzz:tsid}}
+		<div id="s[navlist:i]" class="item" >
+			<div class="title">[navlist:name]</div>
+			{zzz:content size=10 sid=[navlist:id]}
+			<div class="row " style="padding: 0;margin:0">
+				<div class="col-md-12 item-con m-tb">[content:content type=html]</div>
+			</div>
+			{/zzz:content}
+		</div>
+		{/zzz:navlist}
+	</div>
+</main>
+{zzz:foot}
+<script src="{zzz:tempath}js/jquery.sticky-sidebar.min.js"></script>
+<script>
+var a = new StickySidebar('.siderBar', {
+    topSpacing: 20,
+    bottomSpacing: 20,
+    containerSelector: '.content',
+    innerWrapperSelector: '.menu'
+});
+
+//点击导航栏滑动到对应板块
+$('.menu li').eq(0).addClass('cur');
+$('.menu li').on('click',function(){
+	$(this).addClass('cur').siblings().removeClass('cur');
+	var index = $(this).attr('data-href');
+	var elOffset = $(index).offset().top;
+	$('html,body').animate({'scrollTop':elOffset}, 800);
+})
+
+
+//创建页面滚动完成之后的回调事件
+$.fn.scrollEnd = function(callback, timeout) {          
+  	$(this).scroll(function(){
+	    var $this = $(this);
+	    if ($this.data('scrollTimeout')) {
+	      	clearTimeout($this.data('scrollTimeout'));
+	    }
+	    $this.data('scrollTimeout', setTimeout(callback,timeout));
+  	});
+};
+ 
+//with a 1000ms timeout
+$(window).scrollEnd(function(){
+    var ST = $(this).scrollTop();
+	$('.item').each(function(){
+		var elOffset = $(this).offset().top;
+		if(ST >= elOffset){
+			var index = $(this).index();
+			$('.menu li').eq(index).addClass('cur').siblings().removeClass('cur');
+		}
+	})
+}, 0);
+</script>
+</body>
+</html>

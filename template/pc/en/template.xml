@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<template version="0.1">
+  <ScreenShot>index.png</ScreenShot>
+	<name>浙江工商大学英贤慈善学院</name>
+	<demo>http://Philanthropy.zjsu.edu.cn/</demo>
+	<author>webcms</author>
+	<time>2022年3月</time>
+	<website>http://Philanthropy.zjsu.edu.cn/</website>
+	<description>中文默认模版</description>
+</template>

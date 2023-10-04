@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>{zzz:tsname}-{zzz:sitetitle}</title>
+	<meta name="Keywords" content="{zzz:sitekeys}" >
+	<meta name="Description" content="{zzz:sitedesc}">
+	<meta name="author" content="" />
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/materialdesignicons.min.css">	
+	<link rel="stylesheet" type="text/css" href="{zzz:tempath}css/reset.css?v=20221123">
+	<script type="text/javascript" src="{zzz:tempath}js/jquery.min.js?v=1.0" ></script>
+	<script type="text/javascript" src="{zzz:tempath}js/wow.min.js"></script>
+	<script src="{zzz:sitepath}plugins/layer/layer.min.js"></script> 
+	<script src="{zzz:tempath}/js/adminjs.js"></script>
+<style type="text/css">
+.main{position:relative;margin:50px auto;width:1200px;overflow:hidden;}
+.siderBar{float:left;width:250px;}
+.siderBar li{margin-bottom:1px;padding:5px 20px;line-height:50px;font-size:16px;background:#f0f0f0;cursor:pointer;transition:all .5s;}
+.siderBar li.cur{color:#fff;background:#000;}
+.content{float:right;width:920px;min-height: 500px}
+.content .item{color:#333;overflow:hidden;}
+.itembox{margin-bottom:50px;}
+.content .title{padding:15px;font-size: 180%}
+.item-pic img{width:100%;}
+.item-con{font-size: 16px;}
+.m-tb{margin:20px 0;}
+.menu a{display: block}
+.menu .active{background: #000}
+.menu .active a{color: #fff}
+
+/*list-css*/
+.list-box{margin-left:0rem !important;margin-right:0rem !important;}
+.list-box>*{padding-left:0rem !important;padding-right:1rem !important}
+.list-item{margin:3rem 0;transition:.6s;height:220px;border-bottom: 1px solid #efefef;}
+.list-item:hover .title{color:#005ca2}
+.list-item .title{color:#000000}
+.list-item img{width:230px;height:170px;}
+.list-item .img{width:230px;height:170px;float:left;overflow: hidden;}
+.list-item .info{margin-left:230px;padding:1.5rem 2rem 0rem}
+.list-item .info-nopic{padding:2rem 2rem 1rem}
+.list-item .title{overflow:hidden;white-space:nowrap;-o-text-overflow:ellipsis;text-overflow:ellipsis}
+.list-item .title{font-size:20px;display:block}
+.list-item .time{color:#999;margin:10px 0 20px}
+.list-item .actime2{color:#218a4b;border-radius:2em;border:1px solid #218a4b;padding:0 30px 0 60px;font-size:18px;line-height:40px;display:inline-block;background:url(../images/icons/ic_time.png) no-repeat .26rem center}
+.list-item .actime{color:#999;line-height:35px;display:inline-block;}
+.list-item .desc{color:#999;font-size:16px;line-height:26px;height:52px;word-break:break-all;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;-webkit-line-clamp:2;margin-top:10px}
+</style>
+</head>
+<body>
+{zzz:top}
+<main class="main">
+	<div class="siderBar">
+		<div class="menu">
+			<ul>
+				{zzz:navlist sid={zzz:tsid}}
+				<li {if:{zzz:sid}=[navlist:id]}class="active"{end if}><a href="[navlist:link]" >[navlist:name]</a></li>
+				{/zzz:navlist}
+			</ul>
+		</div>
+	</div>
+	<div class="content">
+		<div class="title">[about:name]</div>
+		{if:[about:ispdf]=1}
+			<iframe src ="{zzz:tempath}pdfjs/viewer.php?url=[about:downurl]" width="100%" height="600"></iframe>
+		{else}
+			<div style="padding:15px">[about:content]</div>
+		{end if}
+	</div>
+</main>
+{zzz:foot}
+<script src="{zzz:tempath}js/jquery.sticky-sidebar.min.js"></script>
+
+</body>
+</html>

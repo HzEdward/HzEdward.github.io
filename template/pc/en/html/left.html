@@ -1,0 +1,144 @@
+ <script type="text/javascript">
+$.fn.smartFloat = function() {
+ var position = function(element) {
+  var top = element.position().top, pos = element.css("position");
+  $(window).scroll(function() {
+   var scrolls = $(this).scrollTop();
+   if (scrolls > 490) {
+    if (window.XMLHttpRequest) {
+     element.css({
+      position: "fixed",
+      top:200
+     }); 
+    } else {
+     element.css({
+      top: scrolls
+     }); 
+    }
+   }else {
+      element.css({
+      position: "relative",
+      top:0
+     }); 
+   }
+  });
+ };
+ return $(this).each(function() {
+  position($(this));      
+ });
+};
+</script>
+<style type="text/css">
+#fixed{width:300px;}
+.sidebar-main {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+.nav-drawer li a {
+    padding-left: 50px;
+    color: inherit;
+    font-weight: 500;
+}
+.nav-drawer > li > a {
+    border-right: 3px solid transparent;
+}
+.nav-drawer > .active > a {
+    background-color: rgba(0,0,0,.0125);
+    border-color: #33cabb;
+}
+.nav-drawer > li.active > a {
+    background-color: rgba(0,0,0,.0125)!important;
+}
+.nav-drawer > .active > a:hover,
+.nav-drawer > .active > a:focus,
+.nav-drawer > .active > a:active {
+    background-color: rgba(0,0,0,.0125);
+    border-color: #33cabb;
+}
+
+.nav-drawer > li > a > i {
+    position: absolute;
+    left: 0px;
+    top: 11px;
+    font-size: 1.25em;
+}
+.nav-drawer ul li ul {
+    padding-left: 15px;
+}
+.nav-item-has-subnav > a:after {
+    position: absolute;
+    right: 24px;
+    font-family: 'Material Design Icons';
+    font-size: 10px;
+    line-height: 1.75;
+    content: '\f142';
+    -webkit-transition: -webkit-transform 0.3s linear;
+    transition: -webkit-transform 0.3s linear;
+    transition: transform 0.3s linear;
+    transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+}
+.nav-item-has-subnav.open > a:after {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.nav-item-has-subnav.open > .nav-subnav {
+    display: block;
+}
+.nav-subnav {
+    display: none;
+}
+.nav-subnav li{background-color:#2fa9fa }
+@media (max-width:768px){
+  .nav-drawer li a {padding-left: 50px;}
+  .nav-drawer > li > a > i {left: 0px;}
+  #fixed{width:100%;padding-right:0px;}
+}
+</style>
+<div class="col-md-3 col-menu fl" id="fixed" >
+      <div class="menu-tit"><i class="mdi mdi-folder-open"></i>{zzz:tsname} <a href="javascript:void(0)" class="tran300 flip"><span style="float:right"><i class="mdi mdi-arrow-down-bold-circle-outline"></i></span></a></div>
+      <div class="menu-list panelx">
+      	<div class="lyear-layout-sidebar-scroll">
+      	<nav class="sidebar-main">
+        <ul class="nav nav-drawer" style="line-height: 30px">
+          {zzz:navlist sid={zzz:tsid}}
+          <li class="nav-item {if:[navlist:num]>0}nav-item-has-subnav{end if}"><a href="{if:[navlist:num]>0}javascript:void(0){else}[navlist:link]{end if}" class="tran300"><i class="mdi mdi-menu-right"></i> [navlist:name]</a>
+				  {if:[navlist:num]>0}
+			    <ul class="nav nav-subnav">
+			      {zzz:navlist1 sid=[navlist:id]}
+			      <li id="nav[navlist1:id]"> <a href="[navlist1:link]">[navlist1:name]</a></li>
+			      {/zzz:navlist1}
+			    </ul>
+			    {end if}
+          </li>
+          {/zzz:navlist} 
+        </ul>
+    	</nav>
+    	</div>
+      </div>
+</div>
+<script type="text/javascript"> 
+$(document).ready(function(){
+$(".flip").click(function(){
+    $(".panelx").slideToggle("slow");
+  //if ($(this).find("span").html() == "－") $(this).find("span").html("＋"); else $(this).find("span").html("－");
+    return false;
+  });
+});
+
+//判断是否为手机端
+var ua = navigator.userAgent;
+var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+isIphone =!ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+isMobile = isIphone || isAndroid;
+//判断
+
+if(isMobile){
+
+}else{
+  $("#fixed").smartFloat();
+}
+
+    
+
+</script>
